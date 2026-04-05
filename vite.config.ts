@@ -167,7 +167,7 @@ const plugins = [
 ];
 
 export default defineConfig({
-  base: './',
+  base: '/Dao-Yu-101-V3/',
   plugins,
   resolve: {
     alias: {
