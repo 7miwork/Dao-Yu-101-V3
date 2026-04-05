@@ -150,7 +150,21 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+const plugins = [
+  react(), 
+  tailwindcss(), 
+  jsxLocPlugin(), 
+  vitePluginManusRuntime(), 
+  vitePluginManusDebugCollector(),
+  {
+    name: 'wouter-hash-location-resolve',
+    resolveId(source) {
+      if (source === 'wouter/hash-location') {
+        return this.resolve('wouter/esm/hash-location.js');
+      }
+    }
+  }
+];
 
 export default defineConfig({
   base: './',
@@ -160,6 +174,7 @@ export default defineConfig({
       "@": path.resolve(import.meta.dirname, "client", "src"),
       "@shared": path.resolve(import.meta.dirname, "shared"),
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+      "wouter/hash-location": path.resolve(import.meta.dirname, "node_modules/wouter/use-location.js"),
     },
   },
   envDir: path.resolve(import.meta.dirname),
