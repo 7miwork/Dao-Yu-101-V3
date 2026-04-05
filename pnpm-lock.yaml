@@ -159,8 +159,8 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       wouter:
-        specifier: ^2.12.0
-        version: 2.12.1(react@19.2.4)
+        specifier: 3.1.0
+        version: 3.1.0(react@19.2.4)
       zod:
         specifier: ^4.1.12
         version: 4.3.6
@@ -3018,6 +3018,9 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
+  mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
+
   mlly@1.8.2:
     resolution: {integrity: sha512-d+ObxMQFmbt10sretNDytwt85VrbkhhUA/JBGm1MPaWJ65Cl4wOgLaB1NYvJSZ0Ef03MMEU/0xpPMXUIQ29UfA==}
 
@@ -3266,6 +3269,10 @@ packages:
 
   regex@6.1.0:
     resolution: {integrity: sha512-6VwtthbV4o/7+OaAF9I5L5V3llLEsoPyq9P1JVXkedTP33c7MfCG0/5NOPcSJn0TzXcG9YUrR0gQSWioew3LDg==}
+
+  regexparam@3.0.0:
+    resolution: {integrity: sha512-RSYAtP31mvYLkAHrOlh25pCNQ5hWnT106VukGaaFfuJrZFkGRX5GhUAdPqpSDXxOhA2c4akmRuplv1mRqnBn6Q==}
+    engines: {node: '>=8'}
 
   rehype-harden@1.1.8:
     resolution: {integrity: sha512-Qn7vR1xrf6fZCrkm9TDWi/AB4ylrHy+jqsNm1EHOAmbARYA6gsnVJBq/sdBh6kmT4NEZxH5vgIjrscefJAOXcw==}
@@ -3728,8 +3735,8 @@ packages:
     engines: {node: '>=8'}
     hasBin: true
 
-  wouter@2.12.1:
-    resolution: {integrity: sha512-G7a6JMSLSNcu6o8gdOfIzqxuo8Qx1qs+9rpVnlurH69angsSFPZP5gESNuVNeJct/MGpQg191pDo4HUjTx7IIQ==}
+  wouter@3.1.0:
+    resolution: {integrity: sha512-hou3w+12BMTBckdWdyJp/z7+kKcbdLDWfz6omSyrO6bbx4irNuQQyLDQkfSGXXJCxmglea3c8On9XFUkBSU8+Q==}
     peerDependencies:
       react: '>=16.8.0'
 
@@ -6726,6 +6733,8 @@ snapshots:
 
   mime@1.6.0: {}
 
+  mitt@3.0.1: {}
+
   mlly@1.8.2:
     dependencies:
       acorn: 8.16.0
@@ -6964,6 +6973,8 @@ snapshots:
   regex@6.1.0:
     dependencies:
       regex-utilities: 2.3.0
+
+  regexparam@3.0.0: {}
 
   rehype-harden@1.1.8:
     dependencies:
@@ -7529,9 +7540,11 @@ snapshots:
       siginfo: 2.0.0
       stackback: 0.0.2
 
-  wouter@2.12.1(react@19.2.4):
+  wouter@3.1.0(react@19.2.4):
     dependencies:
+      mitt: 3.0.1
       react: 19.2.4
+      regexparam: 3.0.0
       use-sync-external-store: 1.6.0(react@19.2.4)
 
   yallist@3.1.1: {}

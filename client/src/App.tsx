@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch, Router } from "wouter";
-import hashLocation from "wouter/hash-location";
+import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { I18nProvider } from "./contexts/I18nContext";
@@ -21,7 +21,7 @@ import Leaderboard from "./pages/Leaderboard";
 
 function AppRouter() {
   return (
-    <Router location={hashLocation}>
+    <Router hook={useHashLocation}>
       <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/login"} component={Login} />
